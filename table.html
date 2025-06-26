@@ -22,7 +22,7 @@
       text-align: center;
       font-weight: bold;
       padding: 6px;
-      margin-top: 5px; /* Додано для відступу */
+      margin-top: 5px;
     }
 
     table {
@@ -76,31 +76,44 @@
 
     /* Таблиця 4 */
     .t4 {
-      border: 2px solid #00aaaa;
-      border-spacing: 30px 0;
-      border-collapse: separate;
+      border-collapse: collapse;
+      border: 2px solid #00AAAA;
+      width: 700px;
+      height: 150px;
     }
     .t4 td {
-      border: 1px solid #00aaaa;
-      padding: 6px 40px;
+      border: 1px solid #00AAAA;
+      padding: 15px 50px;
       text-align: center;
+    }
+    .t4 .data1-color {
+      color: #ADD8E6;
+    }
+    .t4 .data6-color {
+      color: #FF69B4;
     }
 
     /* Таблиця 5 */
     .t5 {
       border-collapse: collapse;
+      border: 2px solid #FF00FF; /* Зовнішня рожева рамка */
+      width: 700px; /* Зроблено таблицю широкою */
+      margin: 30px auto; /* Центрування */
     }
     .t5 td {
-      border: 1px solid black;
+      border: 1px solid #FF00FF; /* Внутрішні рожеві рамки */
       padding: 10px 30px;
       text-align: center;
+      width: 33.33%; /* Розподіл ширини на 3 колонки */
     }
-    .t5 .pink {
-      background-color: #ff80d5;
+    /* Кольори фону для комірок */
+    .t5 .bright-green {
+      background-color: #00FF80; /* Яскраво-зелений */
     }
-    .t5 .green {
-      background-color: #80ff80;
+    .t5 .light-green {
+      background-color: #7CFC00; /* Салатовий/світло-зелений */
     }
+
 
     /* Таблиця 6 */
     .t6 {
@@ -112,55 +125,58 @@
       text-align: center;
     }
 
-    /* Таблиця 7 */
+    /* Таблиця 7 - ОНОВЛЕНО */
     .t7 {
-      width: 1000px;
+      width: 1000px; /* Ширина таблиці */
       border-collapse: collapse;
-      border: 2px solid navy;
+      border: 2px solid navy; /* Синя зовнішня рамка */
       margin: 30px auto;
     }
     .t7 td {
-      border: 1px solid navy;
+      border: 1px solid navy; /* Сині внутрішні рамки */
       text-align: center;
-      padding: 0;
-      vertical-align: top;
+      padding: 0; /* padding контролюється .cell-inner */
+      vertical-align: middle; /* Вирівнювання тексту по центру вертикально */
       box-sizing: border-box;
+      height: 50px; /* Базова висота для всіх комірок для рівномірного вигляду */
     }
 
     .t7 .cell-inner {
-        padding: 5px 0;
-        min-height: 25px;
+        padding: 5px 0; /* Відступ всередині вмісту комірки */
+        min-height: 25px; /* Мінімальна висота для вмісту */
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
+        height: 100%; /* Займає 100% висоти батьківської td */
     }
 
-    .t7 td:nth-child(1) { width: 25%; }
-    .t7 td:nth-child(2) { width: 25%; }
+    /* Розподіл ширини колонок */
+    .t7 tr:first-child td:nth-child(1),
+    .t7 td[rowspan="2"]:first-child { width: 25%; }
+    .t7 tr:first-child td:nth-child(2),
+    .t7 td[rowspan="2"]:nth-child(2) { width: 25%; }
     .t7 tr:first-child td:nth-child(3) { width: 25%; }
     .t7 tr:first-child td:nth-child(4) { width: 25%; }
 
-    .t7 td[rowspan="2"]:first-child { width: 25%; }
-    .t7 td[rowspan="2"]:nth-child(2) { width: 25%; }
+    /* Ширина для colspan комірки */
     .t7 td[colspan="2"] { width: 50%; }
 
     .t7 .blue {
-      background-color: #add8e6;
+      background-color: #add8e6; /* Світло-блакитний */
     }
     .t7 .rose {
-      background-color: #f7b7c6;
+      background-color: #f7b7c6; /* Світло-рожевий */
     }
     .t7 .pink {
-      background-color: #ff69b4;
+      background-color: #ff69b4; /* Яскраво-рожевий */
     }
 
 
-    /* Таблиця 8 - ОНОВЛЕНО (Ще набагато нижча) */
+    /* Таблиця 8 */
     .table-8-outer {
         border: 3px solid #00AAAA;
         border-collapse: collapse;
-        width: 900px;
+        width: 600px;
         margin: 30px auto;
         caption-side: bottom;
     }
@@ -174,13 +190,13 @@
         border: 1px solid #00AAAA;
         padding: 0;
         vertical-align: top;
-        height: 60px; /* Зменшено висоту рядків ще більше! Експериментуйте з цим значенням (наприклад, 50px, 40px)! */
+        height: 60px;
         width: 50%;
         box-sizing: border-box;
     }
 
     .cell-content-wrapper {
-        padding: 5px; /* Зменшено загальний відступ для вмісту */
+        padding: 5px;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -197,37 +213,37 @@
         border: 2px solid #FF80D5;
         border-collapse: collapse;
         width: 100%;
-        max-width: 250px; /* Можливо, потрібно ще зменшити для компактності */
-        margin-top: 3px; /* Зменшений відступ */
+        max-width: 250px;
+        margin-top: 3px;
     }
 
     .nested-pink td {
         border: 1px solid #FF80D5;
-        padding: 3px 6px; /* Зменшено відступи клітинок вкладеної таблиці */
+        padding: 3px 6px;
         text-align: center;
-        font-size: 0.75em; /* Можливо, зменшити розмір шрифту */
+        font-size: 0.75em;
     }
 
     .nested-purple {
         border: 2px solid purple;
         border-collapse: collapse;
         width: 100%;
-        max-width: 250px; /* Можливо, потрібно ще зменшити для компактності */
-        margin-top: 3px; /* Зменшений відступ */
+        max-width: 250px;
+        margin-top: 3px;
     }
 
     .nested-purple td {
         border: 1px solid purple;
-        padding: 3px 6px; /* Зменшено відступи клітинок вкладеної таблиці */
+        padding: 3px 6px;
         text-align: center;
-        font-size: 0.75em; /* Можливо, зменшити розмір шрифту */
+        font-size: 0.75em;
     }
 
     .nested-table-label {
         text-align: center;
         font-weight: bold;
-        margin-top: 3px; /* Зменшений відступ */
-        font-size: 0.7em; /* Зменшено розмір шрифту для ще більшої компактності */
+        margin-top: 3px;
+        font-size: 0.7em;
     }
 
     .description-text {
@@ -267,18 +283,18 @@
   <p class="description-text">Примітка: Відомий простір між комірками всередині всієї таблиці 0%.</p>
   <p class="description-text">Відомий простір між лініями всередині комірки (E-межами) 30%.</p>
   <table class="t4">
-    <tr><td>Data1</td><td>Data2</td><td>Data3</td></tr>
-    <tr><td>Data4</td><td>Data5</td><td>Data6</td></tr>
     <caption>Таблиця 4.</caption>
+    <tr><td class="data1-color">Data1</td><td>Data2</td><td>Data3</td></tr>
+    <tr><td>Data4</td><td>Data5</td><td class="data6-color">Data6</td></tr>
   </table>
 
   <p class="description-text">Примітка: Відомий простір між комірками всередині всієї таблиці 0%.</p>
   <p class="description-text">Відомий простір між лініями всередині комірки (E-межами) 10%.</p>
   <table class="t5">
-    <tr><td class="pink">1</td><td>2</td><td>3</td></tr>
-    <tr><td class="green">4</td><td>5</td><td class="green">6</td></tr>
-    <tr><td>7</td><td>8</td><td class="green">9</td></tr>
     <caption>Таблиця 5.</caption>
+    <tr><td>1</td><td>2</td><td>3</td></tr>
+    <tr><td>4</td><td class="bright-green">5</td><td>6</td></tr>
+    <tr><td class="light-green">7</td><td class="light-green">8</td><td class="light-green">9</td></tr>
   </table>
 
   <table class="t6">
@@ -300,6 +316,7 @@
     <tr>
       <td><div class="cell-inner">Data</div></td>
       <td class="rose"><div class="cell-inner">Data</div></td>
+      <td><div class="cell-inner">Data</div></td>
     </tr>
     <tr>
       <td><div class="cell-inner">Data</div></td>
@@ -334,7 +351,7 @@
         </div>
       </td>
       <td>
-        <div class="cell-content-wrapper">
+        <div class="cell-content-wrapper">і
           <table class="nested-purple">
             <tr><td>Data1</td><td>Data2</td><td>Data3</td></tr>
           </table>
